@@ -41,4 +41,7 @@ CONFIG_RESIZE = {
 
 compressor = ImgCompressor()
 folder_path = r"D:\DIJUMPER WEB\PROJECT\260418 - rotibakarbangbrewok\pictures"
-compressor.folder(folder_path, ukuran_target=CONFIG_RESIZE["thumbnail2"]["max_width"])
+# compressor.folder(folder_path, ukuran_target=CONFIG_RESIZE["thumbnail2"]["max_width"])
+
+file_path = r"D:\DIJUMPER WEB\PROJECT\bintapest\pictures\BINTAPEST SPRAY 2.png"
+compressor.file(file_path, max_ukuran=CONFIG_RESIZE["thumbnail2"]["max_width"],)
