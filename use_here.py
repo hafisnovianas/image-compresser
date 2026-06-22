@@ -31,14 +31,17 @@
 # ==============================================================================
 from image_compressor import ImgCompressor
 
-CONFIG_RESIZE = {
+CONFIG = {
     "hero": {"max_width": 1920, "quality": 85},
-    "konten": {"max_width": 1200, "quality": 80},
-    "thumbnail": {"max_width": 600, "quality": 80},
+    "dokumen1": {"max_width": 1200, "quality": 80},
+    "dokumen2": {"max_width": 900, "quality": 80},
+    "thumbnail1": {"max_width": 600, "quality": 80},
     "thumbnail2": {"max_width": 400, "quality": 80},
     "ikon": {"max_width": 200, "quality": 80}
 }
 
+folder_path = r"E:\DIJUMPER WEB\PROJECT\260621 - dahepelani\source\logobrand - Diedit.png"
+config_name = "ikon" # Pilih salah satu: "hero", "dokumen1", "dokumen2", "thumbnail1", "thumbnail2", "ikon"
+
 compressor = ImgCompressor()
-folder_path = r"D:\DIJUMPER WEB\PROJECT\260418 - rotibakarbangbrewok\pictures"
-compressor.folder(folder_path, ukuran_target=CONFIG_RESIZE["thumbnail2"]["max_width"])
+compressor.process(folder_path, max_ukuran=CONFIG[config_name]["max_width"], kualitas=CONFIG[config_name]["quality"])

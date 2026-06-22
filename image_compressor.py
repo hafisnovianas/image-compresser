@@ -6,7 +6,7 @@ class ImgCompressor():
     def __init__(self):
         register_heif_opener() # Wajib: Daftarkan ekstensi HEIC agar bisa dibaca oleh Pillow
 
-    def file(self, input_path, max_ukuran=1920, kualitas=80):
+    def file(self, input_path, max_ukuran, kualitas):
         path_absolut = Path(input_path).resolve()
         folder_sumber = path_absolut.parent
         
@@ -38,9 +38,14 @@ class ImgCompressor():
         except Exception as e:
             print(f"❌ Terjadi kesalahan: {e}")
 
-    def folder(self, folder_input, ukuran_target=600):
-        folder_path = Path(folder_input)
-        for file in folder_path.iterdir():
-            if file.is_file() and file.suffix.lower() in ['.jpg', '.jpeg', '.png', '.heic']:
-                if "_kompres" not in file.stem:
-                    self.file(str(file), max_ukuran=ukuran_target)
+    def process(self, source_input, max_ukuran, kualitas):
+        source_path = Path(source_input)
+        if source_path.is_dir():
+            print(f"📂 Memproses folder: {source_path}")
+            for file in source_path.iterdir():
+                if file.is_file() and file.suffix.lower() in ['.jpg', '.jpeg', '.png', '.heic']:
+                    if "_kompres" not in file.stem:
+                        self.file(str(file), max_ukuran=ukuran_target)
+        if source_path.is_file():
+            print(f"📄 Memproses file: {source_path}")
+            self.file(source_input, max_ukuran, kualitas)
