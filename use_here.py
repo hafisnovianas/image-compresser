@@ -44,4 +44,12 @@ folder_path = r"E:\DIJUMPER WEB\PROJECT\260621 - dahepelani\source\logobrand - D
 config_name = "ikon" # Pilih salah satu: "hero", "dokumen1", "dokumen2", "thumbnail1", "thumbnail2", "ikon"
 
 compressor = ImgCompressor()
+<<<<<<< HEAD
 compressor.process(folder_path, max_ukuran=CONFIG[config_name]["max_width"], kualitas=CONFIG[config_name]["quality"])
+=======
+folder_path = r"D:\DIJUMPER WEB\PROJECT\260418 - rotibakarbangbrewok\pictures"
+# compressor.folder(folder_path, ukuran_target=CONFIG_RESIZE["thumbnail2"]["max_width"])
+
+file_path = r"D:\DIJUMPER WEB\PROJECT\bintapest\pictures\BINTAPEST SPRAY 2.png"
+compressor.file(file_path, max_ukuran=CONFIG_RESIZE["thumbnail2"]["max_width"],)
+>>>>>>> 1c26dfd2e7d3e8179e99d1596a2b57bbe20ed60a

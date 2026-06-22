@@ -45,7 +45,7 @@ class ImgCompressor():
             for file in source_path.iterdir():
                 if file.is_file() and file.suffix.lower() in ['.jpg', '.jpeg', '.png', '.heic']:
                     if "_kompres" not in file.stem:
-                        self.file(str(file), max_ukuran=ukuran_target)
+                        self.file(str(file), max_ukuran, kualitas)
         if source_path.is_file():
             print(f"📄 Memproses file: {source_path}")
             self.file(source_input, max_ukuran, kualitas)
